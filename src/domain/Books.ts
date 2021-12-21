@@ -1,6 +1,6 @@
 import { Book } from "@/domain/Book";
 import { Either } from "@/domain/Either";
 
-interface Books {
+export interface Books {
   get(): Promise<Either<Error, Book>>;
 }

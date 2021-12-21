@@ -1,29 +1,8 @@
-import { RestBook, toBook } from "@/infrastructure/secondary/RestBook";
+import { toBook } from "@/infrastructure/secondary/RestBook";
 import { Book } from "@/domain/Book";
 import { ISBN } from "@/domain/ISBN";
 import { Either, Err, Ok } from "@/domain/Either";
-
-const restBook: RestBook = {
-  "ISBN:9780321125217": {
-    details: {
-      number_of_pages: 529,
-      authors: [{ name: "Eric Evans" }],
-      title: "Domain-driven design",
-      isbn_13: ["9780321125217"],
-    },
-  },
-};
-
-const bookWithBadISBN: RestBook = {
-  "ISBN:9780321125217": {
-    details: {
-      number_of_pages: 529,
-      authors: [{ name: "Eric Evans" }],
-      title: "Domain-driven design",
-      isbn_13: ["123"],
-    },
-  },
-};
+import { bookWithBadISBN, restBook } from "./RestBookFixture";
 
 describe("RestBook", () => {
   it("Should convert to domain", () => {
